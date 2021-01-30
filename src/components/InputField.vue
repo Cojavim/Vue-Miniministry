@@ -54,7 +54,7 @@
         </v-row>
         <input
         type="submit"
-        value="Submit"
+        value="Uložit"
         >
         </form>
 </template>

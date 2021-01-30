@@ -1,15 +1,16 @@
 <template>
-    <InputField/>
+<div>Sum</div>
+    <!-- <InputField/> -->
 </template>
 
 <script>
 // @ is an alias to /src
-import InputField from '@/components/InputField.vue'
+// import InputField from '@/components/InputField.vue'
 
 export default {
   name: 'Home',
   components: {
-    InputField
+    // InputField
   }
 }
 </script>

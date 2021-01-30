@@ -6,9 +6,14 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '/sum',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/',
+    name: 'NewEntry',
+    component: () => import(/* webpackChunkName: "core" */ '../components/InputField.vue')
   },
   {
     path: '/about',
