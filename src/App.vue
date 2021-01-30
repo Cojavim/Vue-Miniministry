@@ -1,12 +1,11 @@
 <template>
   <v-app>
-    <!-- <v-app-bar
-      app
-      color="primary"
-      dark>
-    </v-app-bar> -->
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/overview">overview</router-link> |
+    </div>
     <v-main>
-      <router-view></router-view>
+          <router-view />
     </v-main>
   </v-app>
 </template>
@@ -14,6 +13,9 @@
 <script>
 export default {
   components: {
+  },
+  created () {
+    this.$vuetify.theme.dark = true
   }
 }
 </script>

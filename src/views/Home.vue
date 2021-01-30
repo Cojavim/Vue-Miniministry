@@ -1,7 +1,5 @@
 <template>
-  <div class="home">
     <InputField/>
-  </div>
 </template>
 
 <script>

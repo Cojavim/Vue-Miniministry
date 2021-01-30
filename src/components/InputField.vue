@@ -78,7 +78,8 @@ export default {
         this.errors = [];
 
         console.log('SUBMIT!', this.newEntry)
-        
+        this.$store.dispatch('saveEntry', this.newEntry);
+
         e.preventDefault();
         }
     }

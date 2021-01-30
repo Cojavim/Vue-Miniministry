@@ -6,7 +6,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    EntryList: [],
+    entryList: [],
     online: true
   },
   mutations: {
@@ -14,6 +14,14 @@ export default new Vuex.Store({
   actions: {
     async saveEntry(context, newEntry) {
       idb.saveEntry(newEntry);
+    },
+    async getEntryList(context) {
+      context.state.entryList = [];
+      let lEntryList = await idb.getEntries();
+
+      lEntryList.forEach(a => {
+        context.state.entryList.push(a);
+      });
     }
   },
   modules: {
