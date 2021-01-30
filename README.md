@@ -1,4 +1,4 @@
-# miniministry
+# MiniMiniStry
 
 ## Project setup
 ```
