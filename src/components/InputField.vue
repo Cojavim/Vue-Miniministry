@@ -31,26 +31,26 @@
         </v-row>
         <v-row justify="space-around">
             <span>Publikace :</span>
-            <input v-model.number="newEntry.publications" type="number" placeholder="0">
+            <input class="whiteText" v-model.number="newEntry.publications" type="number" placeholder="0">
         </v-row>
         <v-divider></v-divider>
         <v-row justify="space-around">
             <span>Opetovky :</span>
-            <input v-model.number="newEntry.returnVisits" type="number" placeholder="0">
+            <input class="whiteText" v-model.number="newEntry.returnVisits" type="number" placeholder="0">
         </v-row>
         <v-divider></v-divider>
         <v-row justify="space-around">
             <span>Videa :</span>
-            <input v-model.number="newEntry.videosPlayed" type="number" placeholder="0">
+            <input class="whiteText" v-model.number="newEntry.videosPlayed" type="number" placeholder="0">
         </v-row>
         <v-divider></v-divider>
         <v-row justify="space-around">
             <span>Studia :</span>
-            <input v-model.number="newEntry.studiesConducted" type="number" placeholder="0">
+            <input class="whiteText" v-model.number="newEntry.studiesConducted" type="number" placeholder="0">
         </v-row>
         <v-divider></v-divider>
         <v-row justify="space-around">
-            <textarea v-model="newEntry.note" placeholder="Poznamka"></textarea>
+            <textarea class="whiteText" v-model="newEntry.note" placeholder="Poznamka"></textarea>
         </v-row>
         <input
         type="submit"
@@ -88,5 +88,7 @@ export default {
 </script>
 
 <style>
-
+    .whiteText{
+        color: white;
+    }
 </style>
