@@ -28,6 +28,11 @@ const routes = [
     name: 'Overview',
     component: () => import(/* webpackChunkName: "dashboard" */ '../views/Overview.vue')
   },
+  {
+    path: '/dummy',
+    name: 'Dummy',
+    component: () => import(/* webpackChunkName: "dashboard" */ '../views/Dummy.vue')
+  },
   { 
     path: "*", 
     component: () => import(/* webpackChunkName: "404" */ '../views/404.vue')

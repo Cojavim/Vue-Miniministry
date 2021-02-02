@@ -1,11 +1,7 @@
 <template>
   <v-app>
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/overview">overview</router-link> |
-    </div>
     <v-main>
-          <router-view />
+      <router-view />
     </v-main>
     <v-bottom-navigation 
       v-model="value"
@@ -13,23 +9,20 @@
       grow
       shift
       fixed
+      app
     >
-    <v-btn @click="navigateTo('Home')">
-      <span></span>
-
+    <v-btn class="tallBtn" @click="navigateTo('Home')">
       <v-icon>mdi-home</v-icon>
     </v-btn>
 
-    <v-btn @click="navigateTo('NewEntry')">
-      <span></span>
-
+    <v-btn class="tallBtn" @click="navigateTo('NewEntry')">
       <v-icon>mdi-plus-circle-outline</v-icon>
     </v-btn>
-
-    <v-btn @click="navigateTo('Overview')">
-      <span></span>
-
+    <v-btn class="tallBtn" @click="navigateTo('Overview')">
       <v-icon>mdi-notebook</v-icon>
+    </v-btn>
+    <v-btn class="tallBtn" @click="navigateTo('Dummy')">
+      <v-icon>mdi-bug</v-icon>
     </v-btn>
   </v-bottom-navigation>
   </v-app>
@@ -54,3 +47,8 @@ export default {
   }
 }
 </script>
+<style scoped>
+  .tallBtn {
+    height: auto!important;
+  }
+</style>

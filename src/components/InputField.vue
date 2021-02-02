@@ -13,7 +13,7 @@
             ></v-date-picker>
             </v-expansion-panel-content>
             </v-expansion-panel>
-            <v-expansion-panel>
+            <!-- <v-expansion-panel>
             <v-expansion-panel-header>Time</v-expansion-panel-header>
             <v-expansion-panel-content>
                 <v-time-picker
@@ -21,13 +21,12 @@
                 format="24hr"
             ></v-time-picker>
             </v-expansion-panel-content>
-            </v-expansion-panel>
+            </v-expansion-panel> -->
         </v-expansion-panels>
+
         <v-row justify="center">
-            
-        </v-row>
-        <v-row justify="space-around">
-            
+            <span>Čas: </span>
+            <input class="whiteText" v-model="newEntry.timeServed" id="appt" name="appt" type="time" required>
         </v-row>
         <v-row justify="space-around">
             <span>Publikace :</span>
@@ -71,6 +70,11 @@ export default {
             videosPlayed: 0,
             studiesConducted: 0,
             note: '',
+            hoursServed: 0,
+            minutesServed: 0,
+            year: 0,
+            month: 0,
+            day: 0,
         }
     }),
     methods:{
@@ -80,7 +84,22 @@ export default {
         console.log('SUBMIT!', this.newEntry)
         this.$store.dispatch('saveEntry', this.newEntry);
 
+        this.parseDateTime();
+
         e.preventDefault();
+        },
+
+        parseDateTime() {
+            var timeArr = this.newEntry.timeServed.split(":");
+            var dateArr = this.newEntry.date.split("-");
+
+            this.newEntry.hoursServed = parseInt(timeArr[0], 10);
+            this.newEntry.minutesServed = parseInt(timeArr[1], 10);
+
+            this.newEntry.year = parseInt(dateArr[0], 10);
+            this.newEntry.month = parseInt(dateArr[1], 10);
+            this.newEntry.day = parseInt(dateArr[2], 10);
+            console.log(timeArr, dateArr);
         }
     }
 
