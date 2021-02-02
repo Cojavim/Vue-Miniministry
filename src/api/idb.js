@@ -70,7 +70,7 @@ export default {
     });
   },
 
-  async saveEntry(newEntry) {
+  async saveEntry(aEntry) {
     let db = await this.getDb();
 
     return new Promise(resolve => {
@@ -80,7 +80,22 @@ export default {
       };
 
       let store = trans.objectStore(ENTRIES);
-      store.put(newEntry);
+      store.put(aEntry);
     });
+  },
+
+  async deleteEntry(aEntry) {
+    let db = await this.getDb();
+
+		return new Promise(resolve => {
+
+			let trans = db.transaction([ENTRIES],'readwrite');
+			trans.oncomplete = () => {
+				resolve();
+			};
+
+			let store = trans.objectStore(ENTRIES);
+			store.delete(aEntry.id);
+		});	
   }
 }

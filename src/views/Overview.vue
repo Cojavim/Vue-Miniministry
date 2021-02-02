@@ -36,7 +36,7 @@ export default {
     },
     editEntry(aEntry) {
       console.log('edit', aEntry.id);
-      this.$router.push({ name: 'edit', params: {entry: aEntry} });
+      this.$router.push({ name: 'edit', params: {newEntry: aEntry} });
     }
   }
 };

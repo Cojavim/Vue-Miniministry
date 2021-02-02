@@ -22,7 +22,14 @@ export default new Vuex.Store({
       lEntryList.forEach(a => {
         context.state.entryList.push(a);
       });
-    }
+    },
+    async clearAll(context) {
+      await idb.clearAll();
+      context.state.entryList = [];
+    },
+    async deleteEntry(context, aEntry) {
+      await idb.deleteEntry(aEntry); 
+    },
   },
   modules: {
   }

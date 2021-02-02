@@ -77,6 +77,26 @@ export default {
             day: 0,
         }
     }),
+    created() {
+        if(this.$route.params.newEntry) {
+            this.newEntry = this.$route.params.newEntry;
+        } else {
+            this.newEntry = {
+                date: new Date().toISOString().substr(0, 10),
+                timeServed: 0,
+                publications: 0,
+                returnVisits: 0,
+                videosPlayed: 0,
+                studiesConducted: 0,
+                note: '',
+                hoursServed: 0,
+                minutesServed: 0,
+                year: 0,
+                month: 0,
+                day: 0,
+            };
+        }
+    },
     methods:{
         submitEntry: function (e) {
         this.errors = [];
@@ -87,6 +107,8 @@ export default {
         this.parseDateTime();
 
         e.preventDefault();
+
+        this.$router.push('/sum');
         },
 
         parseDateTime() {

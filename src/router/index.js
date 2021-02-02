@@ -16,6 +16,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "core" */ '../components/InputField.vue')
   },
   {
+    path: '/edit',
+    name: 'edit',
+    component: () => import(/* webpackChunkName: "core" */ '../components/InputField.vue')
+  },
+  {
     path: '/about',
     name: 'About',
     // route level code-splitting
