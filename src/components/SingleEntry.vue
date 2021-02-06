@@ -14,8 +14,8 @@
       </p>
     </v-card-text>
     <v-card-actions>
-      <v-btn color="red" @click="$emit('delete',entry)">Delete</v-btn>
-      <v-btn @click="$emit('edit',entry)">Edit</v-btn>
+      <v-btn color="red" @click="$emit('delete',entry)">Smazat</v-btn>
+      <v-btn @click="$emit('edit',entry)">Upravit</v-btn>
     </v-card-actions>
   </v-card>
 

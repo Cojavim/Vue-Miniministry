@@ -5,7 +5,7 @@
         >
         <v-expansion-panels focusable>
             <v-expansion-panel>
-            <v-expansion-panel-header>Date</v-expansion-panel-header>
+            <v-expansion-panel-header>Datum {{ newEntry.date }}</v-expansion-panel-header>
             <v-expansion-panel-content>
                 <v-date-picker 
                 v-model="newEntry.date"
@@ -13,15 +13,6 @@
             ></v-date-picker>
             </v-expansion-panel-content>
             </v-expansion-panel>
-            <!-- <v-expansion-panel>
-            <v-expansion-panel-header>Time</v-expansion-panel-header>
-            <v-expansion-panel-content>
-                <v-time-picker
-                v-model="newEntry.timeServed"
-                format="24hr"
-            ></v-time-picker>
-            </v-expansion-panel-content>
-            </v-expansion-panel> -->
         </v-expansion-panels>
 
         <v-row justify="center">
@@ -96,6 +87,9 @@ export default {
                 day: 0,
             };
         }
+    },
+    computed() {
+
     },
     methods:{
         submitEntry: function (e) {

@@ -13,12 +13,12 @@
 
 <script>
 export default {
-    name: 'Dummy',
-    data: () => ({}),
-    computed: {
-    entryList() {
-      return this.$store.state.entryList;
-    }
+  name: 'Dummy',
+  data: () => ({}),
+  computed: {
+  entryList() {
+    return this.$store.state.entryList;
+  }
   },
   created() {
     this.$store.dispatch('getEntryList');
@@ -40,6 +40,9 @@ export default {
             aEntry.year = parseInt(dateArr[0], 10);
             aEntry.month = parseInt(dateArr[1], 10);
             aEntry.day = parseInt(dateArr[2], 10);
+        },
+        clearAll() {
+          this.$store.dispatch('clearAll');
         }
     }
 }
