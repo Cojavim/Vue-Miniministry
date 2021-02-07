@@ -102,7 +102,7 @@ export default {
 
         e.preventDefault();
 
-        this.$router.push('/sum');
+        this.$router.push('/mothlyreport');
         },
 
         parseDateTime() {

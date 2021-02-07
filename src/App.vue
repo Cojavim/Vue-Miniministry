@@ -11,7 +11,7 @@
       fixed
       app
     >
-    <v-btn class="tallBtn" @click="navigateTo('Home')">
+    <v-btn class="tallBtn" @click="navigateTo('MothlyReport')">
       <v-icon>mdi-home</v-icon>
     </v-btn>
 
